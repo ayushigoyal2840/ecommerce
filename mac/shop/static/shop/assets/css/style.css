@@ -192,11 +192,11 @@ span {
 }
 
 a,.button {
-  -webkit-transition: all .3s ease-out 0s;
+   -webkit-transition: all .3s ease-out 0s;
   -moz-transition: all .3s ease-out 0s;
   -ms-transition: all .3s ease-out 0s;
   -o-transition: all .3s ease-out 0s;
-  transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s; 
 }
 
 a:focus,.button:focus {
@@ -8551,7 +8551,7 @@ input:focus {
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 0px;
-  -webkit-transition: all 0.3s ease 0s;
+   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -8762,8 +8762,8 @@ input:focus {
 .p_filter_widgets .list li {
   margin-bottom: 18px;
   -webkit-transition: .5s;
-  transition: .5s;
-}
+  transition: .5s; 
+} 
 
 .p_filter_widgets .list li a {
   font-size: 14px;

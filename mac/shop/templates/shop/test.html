@@ -1,10 +1,11 @@
+{% extends 'shop/basic.html'%}
 {%load static%}
 <!doctype html>
 <html lang="zxx">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Watch shop | eCommers</title>
+  <title>{% block title %}{% endblock %}</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="manifest" href="site.webmanifest">
@@ -25,6 +26,7 @@
 </head>
 
 <body>
+    
   <header>
     <!-- Header Start -->
     <div class="header-area">
@@ -76,7 +78,8 @@
                                 </div>
                             </li>
                             <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
-                            <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                            <li><a href="cart.html"><span class="flaticon-shopping-cart">(<span id="cart">0</span>)</span></a> </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -89,6 +92,8 @@
     </div>
     <!-- Header End -->
   </header>
+  {%block body%}
+{%endblock%}
   <footer>
     <!-- Footer Start-->
     <div class="footer-area footer-padding">
@@ -181,6 +186,7 @@
         </form>
     </div>
 </div>
+
 <!-- Search model end -->
 
 <!-- JS here -->
