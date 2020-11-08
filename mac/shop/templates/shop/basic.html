@@ -193,10 +193,10 @@
                 <div class="card-body">
                   <h5 class="card-title">{{i.product_name}}</h5>
                   <p class="card-text">{{i.desc|slice:"0:23"}}...</p>
-                  {{i | is_in_cart:request.session.cart }}
+<!--                  {{i | is_in_cart:request.session.cart }}-->
                  
                  
-                <a href="/shop/products/{{i.id}}" ><button id=qv{{i.id}} type="submit" class="btn btn-primary cart" style="width: 172px; margin-top: 10px;">Quickview</button></a>
+                <a href="/shop/products/{{i.id}}" ><button id=qv{{i.id}} type="submit" class="btn btn-primary cart mx-2" style="width: 172px; margin-top: 10px; ">Quickview</button></a>
             
                 </div>
                 <div class="card-footer p-0" >
@@ -224,7 +224,7 @@
                           
                               <input hidden type="text" name="product" value={{i.id}} style="height: 20px;">
       
-                              <button id="pr{{i.id}}" class="btn btn-primary btn-block cart">Add To Cart</button></span>
+                              <button id="pr{{i.id}}" class="btn btn-primary btn-block cart mx-2">Add To Cart</button></span>
                       
                       <!-- </span> -->
                   </form>
