@@ -5,6 +5,8 @@ from math import ceil
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.hashers import make_password, check_password
 from django.views import View
+from shop.middlewares.auth import auth_middleware
+from django.utils.decorators import method_decorator
 
 
 class Basic(View):
@@ -142,15 +144,15 @@ class CheckOut(View):
 
 
 class Orders(View):
+    @method_decorator(auth_middleware)
     def get(self, request):
         customer=request.session.get('customer')
         orders = Order.get_orders_by_customer(customer)
-        print(orders)
         return render(request, 'shop/orders.html', {'orders':orders})
 
 
 def shop(request):
-    print('you are= ', request.session.get('email'))
+    # print('you are= ', request.session.get('email'))
     return render(request, 'shop/shop.html')
 
 
@@ -162,8 +164,8 @@ class Cart(View):
     def get(self, request):
         ids = (list(request.session.get('cart')))
         products = Product.get_products_by_id(ids)
-        print(list(request.session.get('cart').keys()))
-        print(products)
+        # print(list(request.session.get('cart').keys()))
+        # print(products)
         return render(request, 'shop/cart.html', {'products': products})
 
 

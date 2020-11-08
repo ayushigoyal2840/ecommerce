@@ -31,8 +31,12 @@
       <td>{{order.price|currency}}</td>
       <td>{{order.quantity}}</td>
       <td>{{order.quantity|multiply:order.price|currency}}</td>
-        <td>{{order.status}}</td>
+      {% if order.completed %}
+      <td><small class="badge badge-success">Order Completed Successfully</small></td>
+      {% else %}
+      <td><small class="badge badge-warning">Pending</small></td>
     </tr>
+  {% endif %}
   {% endfor %}
 
 

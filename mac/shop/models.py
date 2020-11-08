@@ -68,6 +68,7 @@ class Order(models.Model):
     address=models.CharField(max_length=500 , default='')
     phone_number=models.CharField(max_length=10,  default='')
     date=models.DateField(default=datetime.datetime.today)
+    completed = models.BooleanField(default=False)
 
 
     def __str__(self):

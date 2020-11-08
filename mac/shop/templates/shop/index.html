@@ -87,8 +87,10 @@ img.heartbeat {
                   
                   <div class="header-right">
                     <ul>
-                            <li><a href="/shop/cart"><span class="flaticon-shopping-cart"></span></a> </li>
+                            <li><a href="/shop/cart"><span class="flaticon-shopping-cart"> ({{request.session.cart.keys|length}})</span></a> </li>
+<!--                        <li><a href="/shop/cart"><span>cart</span></a> </li>-->
                         {% if request.session.customer%}
+
                         
                         
                         <li> <a href="/shop/logout"><span  style="margin-right: 0px; font-weight: 600;">Logout</span></a></li>
